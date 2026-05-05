@@ -7,7 +7,7 @@ from telegram.ext import ApplicationBuilder, MessageHandler, CommandHandler, fil
 from openai import AsyncOpenAI
 
 # ── Получение ключей ─────────────────────────────────────────
-TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN")
+TELEGRAM_TOKEN = "8337499162:AAFrtAB3hR4sQCwSYFQzjeFXiTYkuTLG73Y"
 OPENAI_API_KEY = "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"
 
 # Настраиваем путь к БД, чтобы данные не удалялись на Railway при перезапусках
