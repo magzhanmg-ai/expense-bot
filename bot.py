@@ -200,7 +200,6 @@ async def handle(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await ask_ai(update.effective_user.id, update.message.text, update)
 
 # ── Запуск ───────────────────────────────────────────────────
-
     if __name__ == "__main__":
     init_sheet()
     app = ApplicationBuilder().token(TELEGRAM_TOKEN).build()
