@@ -15,165 +15,137 @@ TELEGRAM_TOKEN = "8337499162:AAFrtAB3hR4sQCwSYFQzjeFXiTYkuTLG73Y"
 ANTHROPIC_API_KEY = "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"
 SPREADSHEET_ID = "https://docs.google.com/spreadsheets/d/1SSCVlk8HpHw25DTpPMYyPt728AC7Xf3tZfSkG0MrZo4/edit?gid=0#gid=0"
 
-# Содержимое JSON файла от Google — вставь всё между тройными кавычками:
-GOOGLE_CREDENTIALS_JSON = """{
-  "type": "service_account",
-  "project_id": "promising-life-226919",
-  "private_key_id": "2f992edca137534724f50de554baec9500212d98",
-  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCtUdEWpsFMpc35\n029FrxGfSExfg3L2eCg6MVSUO70VZTESbvSldLqguK3TGPCAnTCIvAlLFIgascQu\nvJAAQ2+gmiamqGGcMNSbhp+6VozUOMg3li3VsZzWRbYjXFjhMyh6g6Z6rmihClFt\nLwYekwiJfNfNo3jWaff99MuSWa6l7sP86k6sgNM6/YLkXX5un6net3YKUu2KZemZ\nL3pzypPHg3qyHfPYJhmGyVa5uatDhotjUa3DOv3/YD0r1BuLib1qQCeWg51C6vie\n3sQqj6C3Ti+VBsE9cODOk/yoSd0ysUZuqqGqBFEe7+v3WsAm+ayP3wp1YwBJUTnH\nstezy8wdAgMBAAECggEADKZaT6ArnwvB8RAywKACtgCpnFYEe8Mw0nB7xxbmGcvp\nLTp+bh4LKgRYoX3iPczbODubJQjyVxpu4mdeTjqdyNe/Zu4Gs8bnmZNVkJzVCf87\n87ypCz37n7L2VHXewc8BTxHRQoZ8ufY+E605Md2S47ACMy7ReLrCwB0QB5Y2lkMs\ndPYb8kIkv/sijj9+dJ/bZcjzwz5lcWrBb6A026TaU2nh6cKVtahEIZ/Q6vvuerdg\nEHfdV/TllB2/nfQzhWQQOB+9UBE5klIjZUP/EzWWWJuAyYsiO7fQiaxjtaWE3KwK\n5J79M2nHh2T8kMmWphE9HaxwRysigch+A5s7sfNuMQKBgQDZT+iamM0MHsHIlzts\nQ83uZcOS6cNG0OfstRkgjrTfIB55iOkIC2uY4OXnWc1ZATP+RvpMHyuRmMYuLAyB\nm+rT/V1b3HiHF4ft9bXITXqXAdkROJY2UkkEhX6SlczzLjWIPCUv3/4sl7+25YSk\nBgY2FCtnepo2VrXvGpR9XiP/UQKBgQDMLO31npGXY/TWohEbilKRQDq7XVn5V8Rm\nwpN7ZKAR87COs1sHbg2CmA5o0NhfqG7m304zDDzVVvFq7CXFcWObDGsMSEVc0EVk\nr81n9pNoxt97Zz3Ut6PaVSgE0tqMDYGxjs9CG6Sor8hQRR0e/0C1kyCQ5cFvD8MA\nRy0ikfdFDQKBgQCSXMuhNEEGZMDHxXP0W0abxlaO4Hrxe0p5lw+xaexQS2W7HYc2\nL9rsQK0XwNgZlkHahRuXoXbKvUbdWjWiJc1nskHq2PckpaibkN46ZlSm2EvG2YHy\nXEFpli/FsrczInBTrY6uTAL5Lcul97f6cURFsBf7vguXhZdLz28rcPh1wQKBgFkf\nd5OSbtzVbedOgQczfs0Wa0yj+AVGEV4FqxjemJydccEoeyCoIk+SDiAkoX5H6Hjw\nmpLf0aISPHk+sVIZJ7BjYErRNS3JX7EOqCusTzYaMS0NqMi0jFped4R7gZhGwQj/\nXGrv5BUZ/edD8+024Ekh+sIk+CWBjM4PQ51md7f1AoGASL4qOoGpOjpy+cueUUpV\njJWmOsXb2rLD+qvLJgGAJHHkIBAl0U6z5Ua8AuJISjD84geFdSJ6pq/EYFUF9fJJ\nPiA60Unnhq1VjYiBE1EDNAggFaP38QwBLDTvwXs87qhtUdwCao9Q3ufMFnibYPVK\n8KnLNikl2Ifk3Kpj3eQFp5I=\n-----END PRIVATE KEY-----\n",
-  "client_email": "expense-bot@promising-life-226919.iam.gserviceaccount.com",
-  "client_id": "115733687066325693079",
-  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
-  "token_uri": "https://oauth2.googleapis.com/token",
-  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/expense-bot%40promising-life-226919.iam.gserviceaccount.com",
-  "universe_domain": "googleapis.com"
-}
-
-"""
-
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
-# Подключение к Google Sheets
+client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
+
+# ── Google Sheets ────────────────────────────────────────────
 def get_sheet():
-    creds_dict = json.loads(GOOGLE_CREDENTIALS_JSON)
-    scopes = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
-    creds = Credentials.from_service_account_info(creds_dict, scopes=scopes)
-    client = gspread.authorize(creds)
-    sheet = client.open_by_key(SPREADSHEET_ID).sheet1
+    scopes = [
+        "https://spreadsheets.google.com/feeds",
+        "https://www.googleapis.com/auth/drive"
+    ]
+    creds = Credentials.from_service_account_file("credentials.json", scopes=scopes)
+    gc = gspread.authorize(creds)
+    sheet = gc.open_by_key(SPREADSHEET_ID).sheet1
     return sheet
 
 def init_sheet():
     try:
         sheet = get_sheet()
-        headers = sheet.row_values(1)
-        if not headers:
-            sheet.append_row(["Дата", "Сумма", "Категория", "Описание", "Бюджет"])
+        if not sheet.row_values(1):
+            sheet.append_row(["Дата", "Сумма", "Категория", "Описание"])
+            sheet.update("F1", [["Бюджет"]])
+            sheet.update("F2", [[0]])
     except Exception as e:
-        print(f"Ошибка инициализации таблицы: {e}")
+        print(f"Ошибка таблицы: {e}")
 
-def save_expense_to_sheet(amount, category, description):
+def save_expense(amount, category, description):
     try:
         sheet = get_sheet()
         sheet.append_row([
             datetime.now().strftime("%d.%m.%Y"),
             amount,
             category,
-            description,
-            ""
+            description
         ])
         return True
     except Exception as e:
         print(f"Ошибка сохранения: {e}")
         return False
 
-def save_budget_to_sheet(amount):
+def save_budget(amount):
     try:
         sheet = get_sheet()
-        # Записываем бюджет в отдельную ячейку G1
-        sheet.update("G1", [["Бюджет на месяц"]])
-        sheet.update("G2", [[amount]])
+        sheet.update("F1", [["Бюджет"]])
+        sheet.update("F2", [[amount]])
         return True
     except Exception as e:
-        print(f"Ошибка сохранения бюджета: {e}")
+        print(f"Ошибка бюджета: {e}")
         return False
 
-def get_monthly_summary():
+def get_summary():
     try:
         sheet = get_sheet()
-        all_rows = sheet.get_all_records()
+        rows = sheet.get_all_records()
         now = datetime.now()
-        current_month = now.strftime("%m.%Y")
-
-        expenses_by_category = {}
+        month = now.strftime("%m.%Y")
+        by_cat = {}
         total = 0
-
-        for row in all_rows:
-            date_str = str(row.get("Дата", ""))
-            if current_month in date_str:
-                amount = float(row.get("Сумма", 0) or 0)
-                category = row.get("Категория", "другое")
-                total += amount
-                expenses_by_category[category] = expenses_by_category.get(category, 0) + amount
-
-        # Получаем бюджет
+        for row in rows:
+            date = str(row.get("Дата", ""))
+            if month in date:
+                amt = float(row.get("Сумма", 0) or 0)
+                cat = row.get("Категория", "другое")
+                total += amt
+                by_cat[cat] = by_cat.get(cat, 0) + amt
         try:
-            budget = float(sheet.acell("G2").value or 0)
+            budget = float(sheet.acell("F2").value or 0)
         except:
             budget = 0
-
-        return expenses_by_category, total, budget
+        return by_cat, total, budget
     except Exception as e:
-        print(f"Ошибка получения данных: {e}")
+        print(f"Ошибка чтения: {e}")
         return {}, 0, 0
 
-# ── Anthropic клиент ─────────────────────────────────────────
-client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
-
+# ── ИИ ──────────────────────────────────────────────────────
 chat_histories = {}
 
-SYSTEM_PROMPT = """Ты — личный финансовый помощник для учёта расходов и бюджета. Говоришь только по-русски.
+SYSTEM_PROMPT = """Ты — финансовый помощник. Говоришь только по-русски. Отвечай кратко.
 
-Когда пользователь называет расход — отвечай ТОЛЬКО в формате JSON:
+Когда пользователь называет расход — отвечай ТОЛЬКО JSON:
 {"action": "save_expense", "amount": 500, "category": "такси", "description": "такси домой"}
 
 Категории: еда, транспорт, коммунальные, здоровье, развлечения, одежда, другое
 
-Когда пользователь устанавливает бюджет — отвечай ТОЛЬКО:
+Когда устанавливает бюджет — отвечай ТОЛЬКО:
 {"action": "save_budget", "amount": 50000}
 
-В остальных случаях (вопросы, статистика, советы) — отвечай обычным текстом с эмодзи. Кратко и по делу."""
+В остальных случаях — обычный текст с эмодзи."""
 
-async def process_ai_response(user_id, text, update):
+async def ask_ai(user_id, text, update):
     if user_id not in chat_histories:
         chat_histories[user_id] = []
 
-    expenses, total, budget = get_monthly_summary()
-    context = f"\n[Контекст: потрачено в этом месяце {total:.0f}р"
+    by_cat, total, budget = get_summary()
+    ctx = f"\n[Потрачено: {total:.0f}р"
     if budget:
-        left = budget - total
-        context += f", бюджет {budget:.0f}р, осталось {left:.0f}р"
-    if expenses:
-        context += f", по категориям: {', '.join(f'{k}:{v:.0f}р' for k,v in expenses.items())}"
-    context += "]"
+        ctx += f", бюджет: {budget:.0f}р, осталось: {budget-total:.0f}р"
+    if by_cat:
+        ctx += f", категории: {', '.join(f'{k}:{v:.0f}р' for k,v in by_cat.items())}"
+    ctx += "]"
 
-    chat_histories[user_id].append({
-        "role": "user",
-        "content": text + context
-    })
+    chat_histories[user_id].append({"role": "user", "content": text + ctx})
 
-    response = client.messages.create(
+    resp = client.messages.create(
         model="claude-sonnet-4-20250514",
         max_tokens=500,
         system=SYSTEM_PROMPT,
         messages=chat_histories[user_id]
     )
-
-    reply = response.content[0].text
+    reply = resp.content[0].text
 
     try:
-        clean = reply.strip()
-        if clean.startswith("{"):
-            data = json.loads(clean)
+        if reply.strip().startswith("{"):
+            data = json.loads(reply.strip())
 
             if data.get("action") == "save_expense":
-                saved = save_expense_to_sheet(data["amount"], data["category"], data["description"])
-                expenses, total, budget = get_monthly_summary()
-                msg = f"✅ Записал: {data['description']} — {data['amount']:.0f}р ({data['category']})\n"
-                msg += f"📊 Итого за месяц: {total:.0f}р"
+                ok = save_expense(data["amount"], data["category"], data["description"])
+                by_cat, total, budget = get_summary()
+                msg = f"✅ {data['description']} — {data['amount']:.0f}р ({data['category']})\n"
+                msg += f"📊 Месяц: {total:.0f}р"
                 if budget:
                     left = budget - total
-                    emoji = "🟢" if left > 0 else "🔴"
-                    msg += f"\n{emoji} Остаток: {left:.0f}р из {budget:.0f}р"
-                if saved:
-                    msg += "\n📋 Сохранено в таблицу!"
+                    msg += f"\n{'🟢' if left > 0 else '🔴'} Осталось: {left:.0f}р"
+                if ok:
+                    msg += "\n📋 Записано в таблицу!"
                 await update.message.reply_text(msg)
                 chat_histories[user_id].append({"role": "assistant", "content": msg})
                 return
 
             elif data.get("action") == "save_budget":
-                save_budget_to_sheet(data["amount"])
-                msg = f"✅ Бюджет на месяц: {data['amount']:.0f}р\nБуду следить за расходами! 📋"
+                save_budget(data["amount"])
+                msg = f"✅ Бюджет: {data['amount']:.0f}р — сохранён в таблицу! 📋"
                 await update.message.reply_text(msg)
                 chat_histories[user_id].append({"role": "assistant", "content": msg})
                 return
@@ -185,51 +157,47 @@ async def process_ai_response(user_id, text, update):
 
 # ── Команды ──────────────────────────────────────────────────
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    text = (
-        "👋 Привет! Я твой финансовый помощник.\n\n"
-        "Пиши о расходах обычными словами:\n"
-        "• «Купил продукты на 1500р»\n"
-        "• «Такси 350р»\n"
-        "• «Кафе 800 тенге»\n\n"
+    await update.message.reply_text(
+        "👋 Привет! Я финансовый помощник.\n\n"
+        "Пиши о расходах:\n"
+        "• «Продукты 1500р»\n"
+        "• «Такси 350»\n"
+        "• «Кафе 800»\n\n"
         "📌 Команды:\n"
-        "/stat — статистика за месяц\n"
+        "/stat — статистика\n"
         "/budget 50000 — установить бюджет\n\n"
-        "Все данные сохраняются в Google Sheets 📊"
+        "💾 Все данные в Google Sheets!"
     )
-    await update.message.reply_text(text)
 
 async def stat(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    expenses, total, budget = get_monthly_summary()
-    if not expenses:
-        await update.message.reply_text("📭 Расходов пока нет. Напиши мне о первой трате!")
+    by_cat, total, budget = get_summary()
+    if not by_cat:
+        await update.message.reply_text("📭 Расходов пока нет!")
         return
-    now = datetime.now()
     months = ["Январь","Февраль","Март","Апрель","Май","Июнь",
               "Июль","Август","Сентябрь","Октябрь","Ноябрь","Декабрь"]
+    now = datetime.now()
     msg = f"📊 *{months[now.month-1]} {now.year}*\n\n"
-    for cat, amount in sorted(expenses.items(), key=lambda x: -x[1]):
-        pct = (amount / total * 100) if total > 0 else 0
-        msg += f"• {cat}: {amount:.0f}р ({pct:.0f}%)\n"
+    for cat, amt in sorted(by_cat.items(), key=lambda x: -x[1]):
+        pct = amt / total * 100 if total else 0
+        msg += f"• {cat}: {amt:.0f}р ({pct:.0f}%)\n"
     msg += f"\n💰 *Итого: {total:.0f}р*"
     if budget:
         left = budget - total
-        emoji = "🟢" if left > 0 else "🔴"
-        msg += f"\n{emoji} Бюджет: {budget:.0f}р | Осталось: {left:.0f}р"
-    msg += "\n\n📋 Все данные в Google Sheets"
+        msg += f"\n{'🟢' if left > 0 else '🔴'} Осталось: {left:.0f}р из {budget:.0f}р"
+    msg += "\n\n📋 Смотри таблицу для диаграмм!"
     await update.message.reply_text(msg, parse_mode="Markdown")
 
 async def set_budget(update: Update, context: ContextTypes.DEFAULT_TYPE):
     try:
         amount = float(context.args[0])
-        save_budget_to_sheet(amount)
-        await update.message.reply_text(f"✅ Бюджет на месяц: {amount:.0f}р\nСохранено в таблицу! 📋")
+        save_budget(amount)
+        await update.message.reply_text(f"✅ Бюджет: {amount:.0f}р сохранён! 📋")
     except:
-        await update.message.reply_text("❌ Напиши так: /budget 50000")
+        await update.message.reply_text("❌ Напиши: /budget 50000")
 
-async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    user_id = update.effective_user.id
-    text = update.message.text
-    await process_ai_response(user_id, text, update)
+async def handle(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    await ask_ai(update.effective_user.id, update.message.text, update)
 
 # ── Запуск ───────────────────────────────────────────────────
 if __name__ == "__main__":
@@ -238,6 +206,6 @@ if __name__ == "__main__":
     app.add_handler(CommandHandler("start", start))
     app.add_handler(CommandHandler("stat", stat))
     app.add_handler(CommandHandler("budget", set_budget))
-    app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message))
-    print("Бот запущен с Google Sheets! 🚀")
+    app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle))
+    print("🚀 Бот запущен!")
     app.run_polling()
