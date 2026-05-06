@@ -200,7 +200,8 @@ async def handle(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await ask_ai(update.effective_user.id, update.message.text, update)
 
 # ── Запуск ───────────────────────────────────────────────────
-if __name__ == "__main__":
+
+    if __name__ == "__main__":
     init_sheet()
     app = ApplicationBuilder().token(TELEGRAM_TOKEN).build()
     app.add_handler(CommandHandler("start", start))
@@ -208,4 +209,5 @@ if __name__ == "__main__":
     app.add_handler(CommandHandler("budget", set_budget))
     app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle))
     print("🚀 Бот запущен!")
-    app.run_polling()
+    import asyncio
+    asyncio.run(app.run_polling())
