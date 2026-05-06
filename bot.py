@@ -10,7 +10,7 @@ from google.oauth2.service_account import Credentials
 # ================================================
 # ВСТАВЬ СВОИ ДАННЫЕ ЗДЕСЬ:
 TELEGRAM_TOKEN = "8337499162:AAFrtAB3hR4sQCwSYFQzjeFXiTYkuTLG73Y"
-ANTHROPIC_API_KEY = "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"
+ANTHROPIC_API_KEY = "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"
 SPREADSHEET_ID = "https://docs.google.com/spreadsheets/d/1SSCVlk8HpHw25DTpPMYyPt728AC7Xf3tZfSkG0MrZo4/edit?gid=0#gid=0"
 # ================================================
 
