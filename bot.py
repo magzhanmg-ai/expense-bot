@@ -13,7 +13,7 @@ from telegram.ext import (
     filters
 )
 
-TOKEN = os.getenv("TELEGRAM_TOKEN")
+TOKEN = "8337499162:AAFrtAB3hR4sQCwSYFQzjeFXiTYkuTLG73Y"
 
 GOOGLE_SHEET_NAME = "FinanceBot"
 
